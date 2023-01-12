@@ -1,0 +1,194 @@
+{% extends "base.html" %}
+{% block title %}SUMS - Rewards{% endblock %}
+
+{% block content %}
+{% from "Includes/_formHelper.html" import render_field %}
+<link rel="stylesheet" href="../static/css/shop.css">
+<link rel="stylesheet" href="../static/css/main.css">
+<section>
+    <div class="shop-bar">
+        <!--Points button-->
+        <div class="points">
+            <button class="shop-btn">Points: {{ points }}</button>
+        </div>
+        <!--Shopping cart button-->
+        <div class="shopping-cart">
+            <button class="shop-btn">Cart: {{ item_count }}<span></span><img src="../static/icons/icons8-shopping-cart-60.png" alt="..." class="cart-icon"></button>
+        </div>
+    </div>
+</section>
+<!--Shop Options-->
+<section>
+    <div>
+
+
+
+        <form action="" method="POST">
+            <div class="form-group">
+                {{ render_field(form.item_name, class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ render_field(form.item_quantity, class="form-control") }}
+            </div>
+            <input type="submit" value="Submit" class="btn btn-primary"/>
+        </form>
+
+
+
+    </div>
+    <div class="shop-items-wrapper">
+        <div class="generic-heading">
+            <h2 class="generic-title"><strong>Best sellers</strong></h2>
+            <h3 class="generic-sub-title">Take your pick</h3>
+        </div>
+        <div class="row row-cols-1 row-cols-lg-3 best-seller">
+            <div class="col">
+                <div class="card item">
+                  <img src="../static/images/shop/MinecraftMattelGoat-3_180x.webp" class="card-img-top" alt="...">
+                  <div class="card-body" style="text-align: left;">
+                    <h5 class="card-title">Goat Plushie</h5>
+                    <p class="card-text">You have **goat** to have this!</p>
+
+                    <div class="shop-buttons">
+                        <form action="" method="POST">
+                            <button class="add" name="item_btn" value="+goat"><img src="../static/icons/icons8-plus-30.png" alt="..." class="img-btn"></button>
+                        </form>
+                        <form action="" method="POST">
+                            <button class="subtract" name="item_btn" value="-goat"><img src="../static/icons/icons8-minus-30.png" alt="" class="img-btn"></button>
+                        </form>
+
+
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card item">
+                  <img src="../static/images/shop/chicken_mug.png" class="card-img-top" alt="...">
+                  <div class="card-body" style="text-align: left;">
+                    <h5 class="card-title">Chicken Mug</h5>
+                    <p class="card-text">You will love sipping from this Chicken Mug!</p>
+                        <div class="shop-buttons">
+                            <button class="add"><img src="../static/icons/icons8-plus-30.png" alt="..." class="img-btn"></button>
+                            <button class="subtract"><img src="../static/icons/icons8-minus-30.png" alt="" class="img-btn"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card item">
+                  <img src="../static/images/shop/headphones.jfif" class="card-img-top" alt="...">
+                  <div class="card-body" style="text-align: left;">
+                    <h5 class="card-title">Headphones</h5>
+                    <p class="card-text">Headphones</p>
+                    <div class="shop-buttons">
+                        <button class="add"><img src="../static/icons/icons8-plus-30.png" alt="..." class="img-btn"></button>
+                        <button class="subtract"><img src="../static/icons/icons8-minus-30.png" alt="" class="img-btn"></button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--TECH-->
+        <div class="generic-heading">
+            <h2 class="generic-title"><strong>Tech</strong></h2>
+            <h3 class="generic-sub-title">Cool tech</h3>
+        </div>
+        <div class="row row-cols-1 row-cols-lg-3 tech">
+            <div class="col">
+                <div class="card item">
+                  <img src="../static/images/shop/headphones.jfif" class="card-img-top" alt="...">
+                  <div class="card-body" style="text-align: left;">
+                    <h5 class="card-title">Headphones</h5>
+                    <p class="card-text">Headphones</p>
+                    <div class="shop-buttons">
+                        <button class="add"><img src="../static/icons/icons8-plus-30.png" alt="..." class="img-btn"></button>
+                        <button class="subtract"><img src="../static/icons/icons8-minus-30.png" alt="" class="img-btn"></button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card item">
+                  <img src="../static/images/shop/mouse.webp" class="card-img-top" alt="...">
+                  <div class="card-body" style="text-align: left;">
+                    <h5 class="card-title">Mouse</h5>
+                    <p class="card-text">mouse</p>
+                    <div class="shop-buttons">
+                        <button class="add"><img src="../static/icons/icons8-plus-30.png" alt="..." class="img-btn"></button>
+                        <button class="subtract"><img src="../static/icons/icons8-minus-30.png" alt="" class="img-btn"></button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card item">
+                  <img src="../static/images/shop/microphone.jpg" class="card-img-top" alt="...">
+                  <div class="card-body" style="text-align: left;">
+                    <h5 class="card-title">Microphone</h5>
+                    <p class="card-text">Microphone</p>
+                    <div class="shop-buttons">
+                        <button class="add"><img src="../static/icons/icons8-plus-30.png" alt="..." class="img-btn"></button>
+                        <button class="subtract"><img src="../static/icons/icons8-minus-30.png" alt="" class="img-btn"></button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Misc items-->
+        <div class="generic-heading">
+            <h2 class="generic-title"><strong>Others</strong></h2>
+            <h3 class="generic-sub-title">Others</h3>
+        </div>
+        <div class="row row-cols-1 row-cols-lg-3 tech"></div>
+            <div class="col">
+                <div class="card item">
+                  <img src="../static/images/shop/starbucks_voucher.png" class="card-img-top" alt="...">
+                  <div class="card-body" style="text-align: left;">
+                    <h5 class="card-title">Starbucks Voucher</h5>
+                    <div class="shop-buttons">
+                        <button class="add"><img src="../static/icons/icons8-plus-30.png" alt="..." class="img-btn"></button>
+                        <button class="subtract"><img src="../static/icons/icons8-minus-30.png" alt="" class="img-btn"></button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card item">
+                  <img src="../static/images/shop/app_store_voucher.png" class="card-img-top" alt="...">
+                  <div class="card-body" style="text-align: left;">
+                    <h5 class="card-title">App Store Voucher</h5>
+                    <div class="shop-buttons">
+                        <button class="add"><img src="../static/icons/icons8-plus-30.png" alt="..." class="img-btn"></button>
+                        <button class="subtract"><img src="../static/icons/icons8-minus-30.png" alt="" class="img-btn"></button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card item">
+                  <img src="../static/images/shop/design_course.jpg" class="card-img-top" alt="...">
+                  <div class="card-body" style="text-align: left;">
+                    <h5 class="card-title">Exclusive Design Course</h5>
+                    <p class="card-text">For those interested in designing in the 21st century</p>
+                    <div class="shop-buttons">
+                        <button class="add"><img src="../static/icons/icons8-plus-30.png" alt="..." class="img-btn"></button>
+                        <button class="subtract"><img src="../static/icons/icons8-minus-30.png" alt="" class="img-btn"></button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
